@@ -1,0 +1,53 @@
+
+   
+ <div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4" id="register1">
+           <h2>Register</h2>
+            <div class="account-wall">
+                <!-- <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt=""> -->
+                <form class="form-signin" role="form" #f="ngForm" (ngSubmit)="submit(f)">
+                    
+                    <input type="text" required  name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel  #email="ngModel"   class="form-control input-sm chat-input" placeholder="Enteremail" /><br>
+          
+            <div class="btn btn-danger" *ngIf=" email.touched && !email.valid">
+
+                        <div *ngIf="email.errors.required">Email Required</div>
+                         <div *ngIf="email.errors.pattern">invalidmail</div>
+                         
+
+            </div>
+
+                    <input type="text" required  name="psw" ngModel  #password="ngModel"   class="form-control input-sm chat-input" placeholder="EnterPssword" /><br>
+          
+            <div class="btn btn-danger" *ngIf=" password.touched && !password.valid">
+
+                        <div *ngIf="password.errors.required">password Required</div>
+                         <!-- <div *ngIf="password.errors.minlength"> 3 characters needed</div>
+                          <div *ngIf="password.errors.maxlength">8 is the max characters</div> -->
+
+            </div>
+            
+			 
+			<input type="mobile" required  name="mobile" minlength="10" ngModel  #number="ngModel"   class="form-control input-sm chat-input" placeholder="Entermobilenumber" /><br>
+<div class="btn btn-danger" *ngIf=" number.touched && !number.valid">
+			<div *ngIf="number.errors.required">Mobile number Required</div>
+			<div *ngIf="number.errors.minlength"> 10 characters needed</div>
+</div>
+               <div class="button text-center" >
+                <button type="btn "class="btn btn-primary" id="register" [disabled]="f.invalid">
+                    Register</button>
+               </div>
+                
+                </form>
+            </div>
+           
+        </div>
+    </div>
+</div>
+ 
+
+
+
+
